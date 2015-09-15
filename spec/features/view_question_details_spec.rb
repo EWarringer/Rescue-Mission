@@ -1,15 +1,24 @@
 require 'rails_helper'
 
 feature 'view questions', %Q{
-'As a user
+"As a user
 I want to view a question's details
-So that I can effectively understand the question
+So that I can effectively understand the question"
 } do
-  # As a user
-  # I want to view a question's details
-  # So that I can effectively understand the question
+  # - I must be able to get to this page from the questions index
+  # - I must see the question's title
+  # - I must see the question's description
 
-  scenario 'visitor views question details' do
+  scenario 'visitor clicks question, visits page and sees the question title' do
+    question = Question.create!(body: "Can I view the details?", details: "As a user, I'd like to view the details of the question!")
+
+    visit '/questions'
+    click_link question.body
+    expect(page).to have_content(question.body)
+
+  end
+
+  scenario 'visitor clicks question, visits page and sees the question description' do
     question = Question.create!(body: "Can I view the details?", details: "As a user, I'd like to view the details of the question!")
 
     visit '/questions'

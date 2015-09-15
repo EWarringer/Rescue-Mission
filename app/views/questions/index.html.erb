@@ -5,3 +5,5 @@
     <li><%= link_to question.body, "/questions/" + question.to_param %></li>
   <% end %>
 </ul>
+
+<%= link_to 'New Question', new_question_path %>
