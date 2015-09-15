@@ -16,8 +16,10 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-      redirect_to @question, notice: 'Article was successfully created.'
+      flash[:notice] = 'Article was successfully created.'
+      redirect_to @question
     else
+      flash[:notice] = @question.errors.full_messages.join(" & ")
       render action: 'new'
     end
   end

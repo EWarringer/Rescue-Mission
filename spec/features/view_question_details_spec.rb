@@ -10,7 +10,7 @@ So that I can effectively understand the question"
   # - I must see the question's description
 
   scenario 'visitor clicks question, visits page and sees the question title' do
-    question = Question.create!(body: "Can I view the details?", details: "As a user, I'd like to view the details of the question!")
+    question = Question.create!(body: "Can I view the details? something Can I view the details? something Can I view the details? something Can I view the details? something", details: "Can I view the details? somethingACan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethings a user, I'd like to view the details of the question!")
 
     visit '/questions'
     click_link question.body
@@ -19,7 +19,7 @@ So that I can effectively understand the question"
   end
 
   scenario 'visitor clicks question, visits page and sees the question description' do
-    question = Question.create!(body: "Can I view the details?", details: "As a user, I'd like to view the details of the question!")
+    question = Question.create!(body: "Can I view the details? something Can I view the details? something Can I view the details? something Can I view the details? something", details: "Can I view the details? somethingACan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethingCan I view the details? somethings a user, I'd like to view the details of the question!")
 
     visit '/questions'
     click_link question.body
