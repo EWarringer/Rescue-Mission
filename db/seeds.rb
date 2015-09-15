@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Question.create!(body: "How do I use rspec?")
+Question.create!(body: "How do I implement FactoryGirl on rspec?")
+Question.create!(body: "where is the intro to Ruby on Rails?")
