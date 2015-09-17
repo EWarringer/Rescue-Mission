@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
       redirect_to @question
     else
       flash[:notice] = @question.errors.full_messages.join(" & ")
-      render action: 'new'
+      render 'new'
     end
   end
 
