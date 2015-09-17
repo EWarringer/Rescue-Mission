@@ -1,4 +1,5 @@
 class Question < ActiveRecord::Base
-  validates :body, length: {minimum: 40}
-  validates :details, length: {minimum: 150}
+  has_many :answers
+  validates :body, length: {minimum: 10}
+  validates :details, length: {minimum: 10}
 end

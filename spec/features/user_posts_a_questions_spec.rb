@@ -11,8 +11,8 @@ So that I can receive help from others"
 
   scenario 'visitor submits a valid question(40+ chars) and description(150+ chars)' do
     visit '/questions/new'
-    fill_in 'Body', with: 'how many brussels sprouts are there in the world? and this is now over 40 characters.'
-    fill_in 'Details', with: 'I was just wondering. How many brussels sprouts are there in the world? jfekjlkdsanvjkbarjfbewajkbfj ew,anfjk ewasnjf ehwasj fjwealsf lnsajdlfnejwasd.fjlwebajbjk bjik bjlk bjkbjknjk.nujklbnjknljk.njk njl hnjln jk njl njln jln ojnvds nvsn jlvafd'
+    fill_in 'Body', with: 'how many brussels sprouts are there in the world?'
+    fill_in 'Details', with: 'Five hundred fifty two trillion'
     click_button 'Create Question'
 
     visit '/questions'
@@ -22,18 +22,18 @@ So that I can receive help from others"
 
   scenario 'visitor submits invalid question (under 40 characters)' do
     visit '/questions/new'
-    fill_in 'Body', with: 'How many sprouts?'
-    fill_in 'Details', with: 'I was just wondering. How many brussels sprouts are there in the world? jfekjlkdsanvjkbarjfbewajkbfj ew,anfjk ewasnjf ehwasj fjwealsf lnsajdlfnejwasd.fjlwebajbjk bjik bjlk bjkbjknjk.nujklbnjknljk.njk njl hnjln jk njl njln jln ojnvds nvsn jlvafd'
+    fill_in 'Body', with: 'what?'
+    fill_in 'Details', with: 'Five hundred fifty two trillion'
     click_button 'Create Question'
     sleep 0.5
 
     expect(page).to have_content("Body is too short")
   end
 
-  scenario 'visitor submits a filled in form' do
+  scenario 'visitor submits invalid details' do
     visit '/questions/new'
-    fill_in 'Body', with: 'how many brussels sprouts are there in the world? and this is now over 40 characters.'
-    fill_in 'Details', with: 'That is my question!'
+    fill_in 'Body', with: 'how many brussels sprouts are there in the world?'
+    fill_in 'Details', with: '552T'
     click_button 'Create Question'
     sleep 0.5
 

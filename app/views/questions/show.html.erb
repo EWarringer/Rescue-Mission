@@ -2,6 +2,20 @@
 
 <div class="question_details"><%= @question.details %></div>
 
+<ul>
+  <% @answers.each do |answer| %>
+    <li><%= answer %></li>
+  <% end %>
+</ul>
+
+<%= form_for [@question, @answer] do |f| %>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <%= f.submit "Add Answer" %>
+<% end %>
+
+
 <div class="back">
   <%= link_to "back", "/questions/" %>
 </div>
