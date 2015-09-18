@@ -36,12 +36,15 @@ class AnswersController < ApplicationController
   end
 
   def destroy
-    binding.pry
-    @answer = Answer.
+    @answer = Answer.find(params[:id])
+    @answer.destroy
+    flash[:notice] = 'Answer Absolutely Destroyed'
+    redirect_to '/questions/'+params[:question_id]
   end
 
   private
   def answer_params
     params.require(:answer).permit(:body, :question_id)
   end
+
 end

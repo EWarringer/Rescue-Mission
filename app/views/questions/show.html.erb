@@ -4,7 +4,7 @@
 
 <ul>
   <% @answers.each do |answer| %>
-    <li><%= answer.body %> (<%= link_to "edit", edit_question_answer_path(@question, answer) %>, <%= link_to "delete", edit_question_answer_path(@question, answer), method: :delete %>) </li>
+    <li><%= answer.body %> (<%= link_to "edit", edit_question_answer_path(@question, answer) %>, <%= link_to "delete", question_answer_path(@question, answer), method: :delete %>) </li>
   <% end %>
 </ul>
 
